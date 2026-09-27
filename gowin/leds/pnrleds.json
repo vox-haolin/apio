@@ -1,0 +1,302 @@
+{
+  "creator": "Next Generation Place and Route (Version 0.9-3)",
+  "modules": {
+    "top": {
+      "settings": {
+        "route": "00000000000000000000000000000001",
+        "router/tmg_ripup": "0 ",
+        "router1/useEstimate": "1 ",
+        "router1/fullCleanupReroute": "1 ",
+        "router1/cleanupReroute": "1 ",
+        "router1/maxIterCnt": "200",
+        "place": "00000000000000000000000000000001",
+        "placer1/startTemp": "1.000000",
+        "placer1/minBelsForGridPick": "64",
+        "placer1/netShareWeight": "0.000000",
+        "placer1/constraintWeight": "10.000000",
+        "placerHeap/cellPlacementTimeout": "8",
+        "placerHeap/netShareWeight": "0.000000",
+        "placerHeap/parallelRefine": "0 ",
+        "pack": "00000000000000000000000000000001",
+        "synth": "00000000000000000000000000000001",
+        "placerHeap/timingWeight": "10 ",
+        "placerHeap/criticalityExponent": "2",
+        "placerHeap/beta": "0.900000",
+        "placerHeap/alpha": "0.100000",
+        "seed": "0011000101000001010110010010011001010011010110001001011110010011",
+        "arch.type": " ",
+        "arch.name": "ARCHNAME",
+        "router": "router1",
+        "placer": "heap",
+        "auto_freq": "00000000000000000000000000000000",
+        "slack_redist_iter": "00000000000000000000000000000000",
+        "timing_driven": "00000000000000000000000000000001",
+        "target_freq": "12000000.000000",
+        "cst.filename": "tangnano1K.cst",
+        "packer.partno": "GW1NZ-LV1QN48C6/I5",
+        "packer.chipdb": "GW1NZ-1",
+        "packer.arch": "himbaechel/gowin"
+      },
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "leds.v:8.1-16.10"
+      },
+      "ports": {
+        "led": {
+          "direction": "output",
+          "bits": [ 2409, 2406 ]
+        },
+        "but": {
+          "direction": "input",
+          "bits": [ 2402, 2398 ]
+        }
+      },
+      "cells": {
+        "BANDGAP": {
+          "hide_name": 0,
+          "type": "BANDGAP",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X18Y10/BANDGAP"
+          },
+          "port_directions": {
+            "BGEN": "input"
+          },
+          "connections": {
+            "BGEN": [ 2421 ]
+          }
+        },
+        "GSR": {
+          "hide_name": 0,
+          "type": "GSR",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X0Y0/GSR"
+          },
+          "port_directions": {
+            "GSRI": "input"
+          },
+          "connections": {
+            "GSRI": [ 2421 ]
+          }
+        },
+        "$PACKER_GND_DRV": {
+          "hide_name": 1,
+          "type": "GOWIN_GND",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000010",
+            "NEXTPNR_BEL": "X0Y0/GND"
+          },
+          "port_directions": {
+            "G": "output"
+          },
+          "connections": {
+            "G": [ 2422 ]
+          }
+        },
+        "$PACKER_VCC_DRV": {
+          "hide_name": 1,
+          "type": "GOWIN_VCC",
+          "parameters": {
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X0Y0/VCC"
+          },
+          "port_directions": {
+            "V": "output"
+          },
+          "connections": {
+            "V": [ 2421 ]
+          }
+        },
+        "led_OBUF_O_1_I_LUT1_F": {
+          "hide_name": 0,
+          "type": "LUT1",
+          "parameters": {
+            "INIT": "01"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000001",
+            "NEXTPNR_BEL": "X18Y8/LUT7",
+            "src": "/usr/bin/../share/yosys/gowin/cells_map.v:135.23-136.15",
+            "module_not_derived": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "I0": "input",
+            "F": "output"
+          },
+          "connections": {
+            "I0": [ 2404 ],
+            "F": [ 2408 ]
+          }
+        },
+        "led_OBUF_O_1": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X19Y1/IOBB",
+            "src": "leds.v:9.23-9.26",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 2409 ],
+            "I": [ 2408 ]
+          }
+        },
+        "led_OBUF_O": {
+          "hide_name": 0,
+          "type": "OBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X19Y2/IOBA",
+            "src": "leds.v:9.23-9.26",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 2406 ],
+            "I": [ 2399 ]
+          }
+        },
+        "but_IBUF_I_1": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X19Y9/IOBB",
+            "src": "leds.v:10.23-10.26",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 2404 ],
+            "I": [ 2402 ]
+          }
+        },
+        "but_IBUF_I": {
+          "hide_name": 0,
+          "type": "IBUF",
+          "parameters": {
+            "NET_I": "NET",
+            "NET_O": "NET"
+          },
+          "attributes": {
+            "BEL_STRENGTH": "00000000000000000000000000000101",
+            "NEXTPNR_BEL": "X12Y0/IOBA",
+            "src": "leds.v:10.23-10.26",
+            "keep": "00000000000000000000000000000001"
+          },
+          "port_directions": {
+            "O": "output",
+            "I": "input"
+          },
+          "connections": {
+            "O": [ 2399 ],
+            "I": [ 2398 ]
+          }
+        }
+      },
+      "netnames": {
+        "$PACKER_GND": {
+          "hide_name": 1,
+          "bits": [ 2422 ] ,
+          "attributes": {
+            "ROUTING": " "
+          }
+        },
+        "$PACKER_VCC": {
+          "hide_name": 1,
+          "bits": [ 2421 ] ,
+          "attributes": {
+            "ROUTING": "X0Y0/W260;X0Y0/W260/VCC;1;X0Y0/C4;X0Y0/C4/E261;1;X0Y0/VCC;;1;X18Y10/S240;X18Y10/S240/VCC;1;X18Y10/C1;X18Y10/C1/N241;1"
+          }
+        },
+        "led[0]": {
+          "hide_name": 0,
+          "bits": [ 2409 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "leds.v:9.23-9.26"
+          }
+        },
+        "led_OBUF_O_1_I": {
+          "hide_name": 0,
+          "bits": [ 2408 ] ,
+          "attributes": {
+            "ROUTING": "X18Y8/F7;;1;X18Y8/E100;X18Y8/E100/F7;1;X19Y8/N800;X19Y8/N800/E101;1;X19Y0/S200;X19Y0/S200/N808;1;X19Y1/D1;X19Y1/D1/S201;1"
+          }
+        },
+        "led[1]": {
+          "hide_name": 0,
+          "bits": [ 2406 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "leds.v:9.23-9.26"
+          }
+        },
+        "but_IBUF_I_1_O": {
+          "hide_name": 0,
+          "bits": [ 2404 ] ,
+          "attributes": {
+            "ROUTING": "X19Y9/Q6;;1;X19Y9/SN10;X19Y9/SN10/Q6;1;X19Y8/W250;X19Y8/W250/N111;1;X18Y8/A7;X18Y8/A7/W251;1",
+            "src": "/usr/bin/../share/yosys/gowin/cells_map.v:130.20-130.21",
+            "force_downto": "00000000000000000000000000000001"
+          }
+        },
+        "but[0]": {
+          "hide_name": 0,
+          "bits": [ 2402 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "leds.v:10.23-10.26"
+          }
+        },
+        "led_OBUF_O_I[1]": {
+          "hide_name": 0,
+          "bits": [ 2399 ] ,
+          "attributes": {
+            "ROUTING": "X12Y0/F6;;1;X12Y0/E830;X12Y0/E830/F6;1;X19Y0/S250;X19Y0/S250/W838;1;X19Y2/A0;X19Y2/A0/S252;1"
+          }
+        },
+        "but[1]": {
+          "hide_name": 0,
+          "bits": [ 2398 ] ,
+          "attributes": {
+            "ROUTING": " ",
+            "src": "leds.v:10.23-10.26"
+          }
+        }
+      }
+    }
+  }
+}
